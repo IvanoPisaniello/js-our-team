@@ -6,6 +6,8 @@
 // Barbara Ramos	Graphic Designer	    barbara-ramos-graphic-designer.jpg
 
 
+const listContainer = document.getElementById("list-container");
+
 
 //creo un array di oggetti inserendo i dati all'interno degli oggetti: parolaChiave: "proprietà"
 const team = [
@@ -48,3 +50,17 @@ const team = [
 ]
 
 console.log(team)
+
+//creo un ciclo for per prendere i valori degli oggetti e stamparli nell'html
+
+
+for (let i = 0; i < team.length; i++) {
+    const listTeam = team[i];
+
+    console.log(listTeam);
+
+    listContainer.innerHTML += `<div class="list-group-item">${listTeam.firstName} ${listTeam.lastName} (${listTeam.role}) ${listTeam.img}</div>`;
+}
+
+
+
