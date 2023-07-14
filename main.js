@@ -59,8 +59,9 @@ for (let i = 0; i < team.length; i++) {
 
     console.log(listTeam);
 
-    listContainer.innerHTML += `<div class="list-group-item">${listTeam.firstName} ${listTeam.lastName} (${listTeam.role}) ${listTeam.img}</div>`;
+    listContainer.innerHTML += `<div class="list-group-item border py-3 rounded-3">${listTeam.firstName} ${listTeam.lastName} (${listTeam.role}) ${listTeam.img}</div>`;
 }
+
 
 
 
