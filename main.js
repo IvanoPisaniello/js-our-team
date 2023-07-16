@@ -7,6 +7,12 @@
 
 
 const listContainer = document.getElementById("list-container");
+const inputBtn = document.getElementById("input");
+const inputName = document.getElementById("inputName");
+const inputLast = document.getElementById("inputLast");
+const inputRole = document.getElementById("inputRole");
+
+inputBtn.addEventListener("click", onBtnClick);
 
 
 //creo un array di oggetti inserendo i dati all'interno degli oggetti: parolaChiave: "proprietà"
@@ -48,8 +54,30 @@ const team = [
         img: "Barbara-ramos-grafic-designer.jpg",
     }
 ]
+//creo una funzione che pushi all'interno dell'array
+function pushing(objectName) {
+    team.push(objectName);
+}
+
 
 console.log(team)
+
+//richiamo il click al button creato in precedenza e inserisco all'interno
+//un nuovo oggetto contenente il value degli imput
+function onBtnClick() {
+    const newPerson = {
+        firstName: inputName.value,
+        lastName: inputLast.value,
+        role: inputRole.value,
+        img: "-nessuna immagine da mostrare"
+    }
+    //pusho il nuovo oggetto all'interno dell'array
+    pushing(newPerson);
+    listContainer.innerHTML += `<div class="list-group-item border py-3 rounded-3">${newPerson.firstName} ${newPerson.lastName} (${newPerson.role}) ${newPerson.img}</div>`;
+}
+
+
+
 
 //creo un ciclo for per prendere i valori degli oggetti e stamparli nell'html
 
@@ -61,7 +89,4 @@ for (let i = 0; i < team.length; i++) {
 
     listContainer.innerHTML += `<div class="list-group-item border py-3 rounded-3">${listTeam.firstName} ${listTeam.lastName} (${listTeam.role}) ${listTeam.img}</div>`;
 }
-
-
-
 
